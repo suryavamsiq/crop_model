@@ -31,8 +31,8 @@ def prediction(input_data):
 def main():
     st.title("CROP RECOMMENDATION SYSTEM WEB APP")
     #N	P	K	temperature	humidity	ph	rainfall	label
-    Nitrogen=st.text_input('enter value of N')
-    Phosporous=st.text_input('enter value of P')
+    nitrogen=st.text_input('enter value of N')
+    phosporous=st.text_input('enter value of P')
     potassium=st.text_input('enter value of k')
     temp=st.text_input('enter value of temprature')
     humidity=st.text_input('enter value of humidity')
@@ -41,7 +41,7 @@ def main():
     
     output=''
     if st.button('recommended crop'):
-        output=prediction([Nitrogen,Phosporous,potassium,temp,humidity,ph,rainfall])
+        output=prediction([nitrogen,phosporous,potassium,temp,humidity,ph,rainfall])
     
     st.success(output) 
 
