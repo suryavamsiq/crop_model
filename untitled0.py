@@ -41,11 +41,10 @@ def main():
     
     loaded_model = load_model()
     
-    output = ''
-    if loaded_model is not None and st.button('Recommend Crop'):
-        output = prediction(loaded_model, [nitrogen, phosphorus, potassium, temp, humidity, ph, rainfall])
-    
-    st.success(output) 
+    if loaded_model is not None:
+        if st.button('Recommend Crop'):
+            output = prediction(loaded_model, [nitrogen, phosphorus, potassium, temp, humidity, ph, rainfall])
+            st.success(output)
 
 if __name__ == '__main__':
     main()
