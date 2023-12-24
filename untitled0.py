@@ -22,9 +22,17 @@ def prediction(input_data):
     newValues1=newValues1.reshape(1,-1)
     try:
         prediction_result = loaded_model.predict(newValues1)
+        print("Prediction result:", prediction_result)
         return ('The recommended model for your data is', prediction_result)
     except Exception as e:
         print(f"Error during prediction: {e}")
+        return None  # or handle the error in an appropriate way
+
+# ...
+
+output = prediction([N, P, K, temp, humidity, ph, rainfall])
+print("Output:", output)
+
 
     #return ('The recommended model for your data is',loaded_model.predict(newValues1))
     
