@@ -7,7 +7,7 @@ Created on Sun Dec 24 10:56:34 2023
 
 import pickle
 import numpy as np
-loaded_model=pickle.load(open('C:/Users/c surya vamsi/1trainedmodel.sav','rb'))
+loaded_model=pickle.load(open('1trainedmodel.sav','rb'))
 import streamlit as st
 
 def prediction(input_data):
