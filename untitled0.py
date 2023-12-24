@@ -7,7 +7,14 @@ Created on Sun Dec 24 10:56:34 2023
 
 import pickle
 import numpy as np
-loaded_model=pickle.load(open('1trainedmodel.sav','rb'))
+try:
+    loaded_model = pickle.load(open('1trainedmodel.sav', 'rb'))
+except Exception as e:
+    print(f"Error loading the model: {e}")
+    # Add more detailed information about the exception if needed
+    # For example, print(traceback.format_exc()) to print the full traceback
+
+#loaded_model=pickle.load(open('1trainedmodel.sav','rb'))
 import streamlit as st
 
 def prediction(input_data):
