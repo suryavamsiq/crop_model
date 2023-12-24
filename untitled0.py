@@ -20,14 +20,20 @@ import streamlit as st
 def prediction(input_data):
     newValues1=np.array(input_data)
     newValues1=newValues1.reshape(1,-1)
-    return ('The recommended model for your data is',loaded_model.predict(newValues1))
+    try:
+        prediction_result = loaded_model.predict(newValues1)
+        return ('The recommended model for your data is', prediction_result)
+    except Exception as e:
+        print(f"Error during prediction: {e}")
+
+    #return ('The recommended model for your data is',loaded_model.predict(newValues1))
     
 def main():
     st.title("CROP RECOMMENDATION SYSTEM WEB APP")
     #N	P	K	temperature	humidity	ph	rainfall	label
-    N=st.text_input('enter value of N')
-    P=st.text_input('enter value of P')
-    K=st.text_input('enter value of k')
+    Nitrogen=st.text_input('enter value of N')
+    Phosporous=st.text_input('enter value of P')
+    potassium=st.text_input('enter value of k')
     temp=st.text_input('enter value of temprature')
     humidity=st.text_input('enter value of humidity')
     ph=st.text_input('enter value of ph')
@@ -35,7 +41,7 @@ def main():
     
     output=''
     if st.button('recommended crop'):
-        output=prediction([N,P,K,temp,humidity,ph,rainfall])
+        output=prediction([Nitrogen,Phosporous,potassium,temp,humidity,ph,rainfall])
     
     st.success(output) 
 
