@@ -30,8 +30,6 @@ def prediction(input_data):
 
 # ...
 
-output = prediction([N, P, K, temp, humidity, ph, rainfall])
-print("Output:", output)
 
 
     #return ('The recommended model for your data is',loaded_model.predict(newValues1))
