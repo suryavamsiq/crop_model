@@ -25,8 +25,8 @@ def prediction(input_data):
         print("Prediction result:", prediction_result)
         return ('The recommended model for your data is', prediction_result)
     except Exception as e:
-        print(f"Error during prediction: {e}")
-        return None  # or handle the error in an appropriate way
+        return(f"Error during prediction: {e}")
+      # or handle the error in an appropriate way
 
 # ...
 
